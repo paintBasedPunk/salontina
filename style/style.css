@@ -1,0 +1,475 @@
+/* CSS Variables */
+:root {
+  --white: #fff;
+  --khaki: #F0E68C;
+  --dark-color: #383740;
+  --black: #111;
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+a,
+hr {
+  color: var(--khaki);
+  text-decoration: none;
+}
+
+/* body::-webkit-scrollbar {display: block;} */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Utility Classes */
+.sub{
+  font-size: 0.8rem;
+}
+
+.space-between{
+  display: flex;
+  justify-content: space-between;
+}
+
+.center{
+  display: grid;
+  place-content: center;
+}
+
+.underline{
+  border-bottom: var(--khaki) 2px solid;
+}
+
+.list-v2{
+  width: 100%;
+}
+
+.container{
+  /* height: 100vh; */
+  display: grid;
+}
+
+/* Scroll Down/Up Buttons */
+#down,
+#up {
+  font-size: 2rem;
+  position: absolute;
+  justify-self: center;
+  align-self: end;
+}
+
+#down {
+  color: var(--khaki);
+  margin-bottom: 10vh;
+}
+
+.fa-solid {
+  transition: 0.3s ease-in;
+}
+.fa-solid:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+/* Main-Styling */
+body {
+  background-color: var(--black);
+  color: var(--khaki);
+  font-family: helvetica; 
+  user-select: none;
+}
+
+h1{
+  font-family: 'Allura', cursive;
+  font-size: 2.5rem;
+}
+
+/* Home Section */
+#home {
+  display: grid;
+  background-image: url("https://source.unsplash.com/1600x1600?barber");
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* insert a layer over the home section */
+#home::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(17,17, 17, 0.4);
+}
+
+#home h1 {
+  z-index: 4;
+  margin: auto;
+  font-size: 3rem;
+  text-align: center;
+  text-shadow: 0 0 1.8rem var(--khaki);
+}
+
+/* Info Box */
+#info{
+  z-index: 4;
+  margin: 1rem 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#info div{
+  margin: 1rem 0;
+}
+
+#info a{
+  display: grid;
+  place-content: left;
+  font-size: 2rem;
+}
+
+/* Welcome Section */
+#welcome{
+  display: grid;
+  place-content: center;
+  grid-template-rows: 6vh auto;
+}
+
+#intro{
+  grid-row: 2 / 3;
+  margin: auto;
+  max-width: 55vw;
+  /* box-shadow: 0 0 15px var(--khaki); */
+  /* border-radius: 10px; */
+}
+
+#welcome p{
+  /* margin: auto; */
+  text-align: center;
+  font-size: 1.3rem;
+  line-height: 1.2;
+  margin: 1rem;
+}
+
+/* Gallery Section */
+#gallery {
+  display: grid;
+  grid-template-rows: 5vh 10vh auto;
+  place-content: center;
+}
+
+#gallery-title {
+  grid-row: 2 / 3;
+  margin: auto;
+}
+
+#gallery .container {
+  grid-row: 3 / 4;
+
+  max-width: 70vw;
+  margin: 2rem 0;
+  grid-template-columns: repeat(4, 1fr);
+  place-content: center;
+}
+
+.card {
+  margin: 0.5rem;
+  display: grid;
+  place-content: center;
+}
+
+/* Overlap Image & Content */
+.card img,
+.card-content {
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 1 / 1.4;
+  object-fit: cover;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.card img:hover {
+  opacity: 0.6;
+}
+
+/* Price Section */
+#price{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 8vh auto auto auto;
+}
+
+.price-title{
+  display: flex;
+  justify-content: center;
+  grid-column: 1 / -1;
+  margin: 1rem;
+}
+
+.price-header{
+  grid-row: 2 / 3;
+}
+
+.price-list{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#women{
+  grid-column: 1 / -1;
+  grid-row: 3 / 4;
+}
+
+#men{
+  grid-column: 1 / -1;
+  grid-row: 4 / 5;
+}
+
+#men .price-list{
+  grid-template-columns: 1fr;
+}
+
+.price-card{
+  margin: 2rem;
+  min-width: 25vw;
+}
+
+.price-card h3{
+  border-bottom: var(--khaki) 2px solid;
+}
+
+.price-tag{
+  display: flex;
+  justify-content: space-between;  
+  margin: auto;
+}
+
+.price-card h3,
+.price-tag ul li{
+  margin: 0.5rem;
+}
+
+.cost{
+  text-align: right;
+}
+
+/* Contact-Section */
+#contact {
+  display: grid;
+  grid-template-rows: 5vh 10vh auto 5vh;
+}
+
+#contact-title {
+  grid-row: 2 / 3;
+  margin: auto;
+}
+
+#contact .container {
+  grid-row: 3 / 4;
+}
+
+/* adress */
+#adress{
+  display: flex;
+  margin: auto;
+}
+
+#adress div{
+  margin: 2rem;
+}
+
+#adress p {
+  margin: 0.25rem 0;
+}
+
+/* map */
+#map{
+  display: grid;
+  place-content: center;
+}
+
+#map iframe {
+  height: 40vh;
+  width: 40vw;
+  margin: 2rem 0;
+  border-radius: 5px;
+}
+
+/* hours */
+#hours{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  min-height: 50vh;
+}
+
+#hours-link{
+  display: none;
+}
+
+#hours h3{
+  margin-top: 2rem;
+}
+
+.hours-list{
+  display: flex;
+}
+
+.hours-list ul{
+  margin: 0 2rem;
+}
+
+#hours li{
+  margin: 1rem 0;
+}
+
+/* Impressum */
+#impressum {
+    /* background-image: 
+    radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+    radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+  padding: 1rem; */
+  background-color: var(--khaki);
+  color: var(--black);
+
+  grid-row: 4 / 5;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#impressum a {
+  color: var(--black);
+}
+
+/* Media Queries */
+
+/* Landscape View */
+@media(max-width: 768px){
+  /* Utilities */
+  #down{
+    display: none;
+  }
+
+  /* Home Section */
+  #home h1{
+    font-size: 2.2rem;
+  }
+
+  #info{
+    font-size: 0.8rem;
+  }
+
+  #info a{
+    font-size: 1.8rem;
+  }
+
+  /* Price Section */
+  #price{
+    grid-template-rows: 15vh auto auto auto;
+  }
+
+  /* Gallery Section */
+  #gallery{
+    grid-template-rows: 15vh auto auto;
+  }
+
+  #gallery .container{
+    max-width: 90vw;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Contact Section */
+  #contact {
+    grid-template-rows: 15vh 10vh auto 8vh;
+  }
+
+  #map iframe {
+    height: 80vh;
+    width: 60vw;
+  }
+
+  #hours-link{
+    display: block;
+  }
+
+  #hours h3{
+    margin-top: 18vh;
+  }
+
+  /* Title Size */
+  #gallery-title,
+  .price-title h1,
+  #contact-title{
+    font-size: 2rem;
+  }
+}
+
+/* Portrait View */
+@media(max-width:550px){
+  /* Home Section */
+  #info{
+    left: unset;
+    right: 0;
+    text-align: right;
+  }
+
+  #intro{
+    max-width: 90vw;
+  }
+
+  /* Gallery Section */
+  #gallery .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Price Section */
+  .price-list{
+    grid-template-columns: 1fr;
+  }
+
+  /* Contact Section */
+  #contact {
+    grid-template-rows: 5vh 10vh auto 5vh;
+  }
+
+  #adress{
+    justify-content: space-between;
+    width: 80vw;
+  }
+
+  #adress div{
+    margin: 2rem 0;
+  }
+
+  #map iframe {
+    height: 60vh;
+    width: 100%;
+  }
+
+  .hours-list ul{
+    margin: 0 0.75rem;
+  }
+
+  #time{
+    margin-left: 0.8rem;
+  }
+}

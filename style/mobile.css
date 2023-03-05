@@ -1,0 +1,292 @@
+/* media queries for mobile devices */
+@media screen and (max-device-width: 500px) and (orientation: portrait) {
+  /* Utilities */
+  h1,
+  h2,
+  h3 {
+    font-size: 3rem;
+  }
+
+  li,
+  p {
+    font-size: 2.5rem;
+    margin: 2rem;
+  }
+
+  :root {
+    --mobile-modal-font-size: 8rem;
+  }
+
+  .menu-container {
+    margin: 2rem;
+  }
+
+  #mobile-menu {
+    margin-top: 10vh;
+  }
+
+  /* Gallery-Section */
+  #gallery .container {
+    grid-template-columns: 1fr;
+    margin: auto;
+    width: 100%;
+  }
+
+  /* Lightbox */
+  #fullScreen-btn {
+    display: none;
+  }
+
+  #modal-main {
+    grid-template-columns: auto;
+  }
+
+  #close-btn,
+  #prev,
+  #next {
+    font-size: var(--mobile-modal-font-size);
+  }
+
+  #index {
+    margin-top: 5vh;
+  }
+
+  #index,
+  #caption {
+    font-size: 4rem;
+    /* margin: auto; */
+  }
+
+  #prev,
+  #next {
+    all: unset;
+
+    cursor: pointer;
+    transition: 0.5s;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    bottom: 0%;
+
+    margin-bottom: 10vh;
+  }
+
+  #prev {
+    left: 0;
+    width: 49%;
+    font-size: 5rem;
+    /* border: #fff 2px solid; */
+    /* margin: auto; */
+    /* height: 100%; */
+  }
+
+  #next {
+    right: 0;
+    width: 49%;
+    font-size: 5rem;
+  }
+
+  #caption {
+    display: none;
+  }
+
+  #fullScreen-btn {
+    display: none;
+  }
+
+  /* Gallery-Section */
+  #gallery {
+    display: grid;
+    grid-template-rows: 5vh 10vh auto;
+  }
+
+  .card{
+    max-height: auto;
+  }
+
+  #gallery .container {  
+    max-width: auto;
+  }
+
+  /* Price-List */
+  #price ul,
+  li {
+    margin: 1rem 4rem;
+  }
+
+  /* Contact-Section */
+  #contact {
+    grid-template-rows: 5vh auto auto;
+  }
+
+  #contact-title {
+    grid-row: 1 / 2;
+  }
+
+  #contact .container {
+    grid-row: 2 / 3;
+  }
+
+  #adress, #hours{
+    margin: auto;
+  }
+
+  #map iframe {
+    height: 30vh;
+    width: 90vw;
+  }
+
+  #impressum{
+    grid-row: 3 / 4;
+    font-size: 2rem;
+  }
+}
+
+/* @media screen and (max-device-width: 700px) {
+  #gallery .container {  
+    grid-template-columns: repeat(2, 1fr);
+  }
+} */
+
+@media screen and (max-device-height: 500px) {
+  #gallery .container {  
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  #map iframe {
+    height: 60vh;
+    width: 90vw;
+  }
+}
+
+/* Device Width */
+@media(max-device-width: 800px){
+  h1{
+    font-size: 5rem;
+  }
+
+  #home h1 p{
+    font-size: 3rem;
+  }
+
+  #info{
+    left: unset;
+    right: 0;
+    margin: 3rem;
+    text-align: right;
+  }
+
+  #info p {
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  #info a{
+    font-size: 4.5rem;
+  }
+
+  #down{
+    margin-bottom: 5rem;
+  }
+
+  .container{
+    min-height: 100vh;
+  }
+
+  #gallery {
+    grid-template-rows: 12vh 10vh auto;
+  }
+
+  #gallery .container {
+    max-width: unset;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  #price{
+    grid-template-rows: 12vh auto auto auto;
+  }
+
+  #contact {
+    display: grid;
+    grid-template-rows: 10vh 10vh auto 5vh;
+  }
+
+  #map iframe {
+    height: 70vh;
+    width: 70vw;
+  }
+}
+
+@media(max-device-width: 500px){
+  #home h1 p{
+    font-size: 5rem;
+  }
+
+  #gallery {
+    grid-template-rows: auto 10vh auto;
+  }
+
+  #gallery .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #price{
+    grid-template-rows: 2vh auto auto auto;
+  }
+
+  .price-list{
+    grid-template-columns: 1fr;
+  }
+
+  .price-card{
+    min-width: 700px;
+  }
+
+  #contact {
+    grid-template-rows: auto 10vh auto 5vh;
+  }
+
+  .sub{
+    font-size: 2rem;
+  }
+
+  .list-v2 p{
+    margin: 0.5rem 0;
+  }
+
+  #map iframe {
+    height: 40vh;
+    width: 90vw;
+  }
+
+  #impressum{
+    font-size: 2rem;
+  }
+}
+
+/* Device Height */
+@media(max-device-height: 500px){
+  #navbar{
+    font-size: 1.2rem;
+  }
+
+  #price,
+  #contact{
+    font-size: 1.3rem;
+  }
+
+  #gallery {
+    grid-template-rows: 12vh 10vh auto;
+  }
+
+  #price{
+    grid-template-rows: 12vh auto auto auto;
+  }
+
+  #contact {
+    grid-template-rows: 12vh 10vh auto 5vh;
+  }
+}

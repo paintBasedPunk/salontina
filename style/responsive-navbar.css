@@ -1,0 +1,211 @@
+/* CSS Variables */
+:root{
+  --bg-primary: hsla(0, 100%, 50%, 0.2);
+  --bg-secondary: hsla(0, 0%, 0%, 0.2);
+  --bg-dark: #333;
+  --bg-light: #fff;
+  --khaki: #f0e68c;
+
+  --mobile-font-size: 1.5rem;
+  
+  --menu-width: 30px;
+  --menu-height: 30px;
+  
+  --btn-width: 30px;
+  --btn-height: 4px;
+  --btn-radius: 5px;
+  
+  --menu-bar-offsetUp: 10px;
+  --menu-bar-offsetDown: -10px;
+}
+
+/* Navbar */
+#navbar{
+  height: 6vh;
+  width: 100%;
+  transform: scale(1,1);
+  font-weight: bold;
+
+  background-color: var(--bg-secondary);
+  backdrop-filter: blur(0.5rem);
+  
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+}
+
+#navbar #menu{
+  grid-column: 2 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#navbar #menu li{
+  margin: 0 1rem;
+}
+
+/* navbar hover effect */
+#navbar #menu li a{
+  position: relative;
+  transition: ease-in-out 300ms;
+}
+
+/* create a bottom line for each link */
+#navbar #menu li a::before{
+  content: '';
+  display: block;
+  height: 3px;
+  background-color: var(--khaki);
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  right: 0;
+  /* set the width of the bottom line to "0" */
+  transform: scale(0, 1);
+  transform-origin: left;
+  transition: transform ease-in-out 300ms;
+}
+
+#navbar #menu li a:hover{
+  text-shadow: 0px 0px 0.5em var(--khaki);
+}
+
+/* increase the width of the bottom line to "1" */
+#navbar #menu li a:hover::before{transform: scale(1, 1);}
+
+/* Mobile Navbar */
+#mobile-nav{
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+  
+    display: none;
+  
+    background-color: var(--bg-secondary);
+    backdrop-filter: blur(0.5rem);
+    -webkit-backdrop-filter: blur(0.5rem);
+  
+    transform: scale(0, 1);
+    transform-origin: right;
+    z-index: 4;
+  }
+  
+  #mobile-nav #mobile-menu{
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  #mobile-nav #mobile-menu li{
+    /* border-bottom: red 2px dotted; */
+    display: grid;
+    place-content: center;
+    margin: 3rem 0;
+    padding-bottom: 0.5rem;
+    font-size: var(--mobile-font-size);
+  }
+
+/* Hamburger Menu */
+.menu-container{
+  display:none;
+  margin: 1rem;
+  position: fixed;
+  z-index: 5;
+}
+
+/* overlap checkbox with menu-buttons */
+#menu-toggle,
+#menu-btn-container{
+  cursor: pointer;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+#menu-toggle{
+  height: var(--menu-height);
+  width: var(--menu-width);
+  z-index: 2;
+  opacity: 0;
+}
+
+/* Menu Button */
+#menu-btn-container{
+  height: var(--menu-height);
+  width: var(--menu-width);
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Hamburg Menu Layout */
+#menu-btn,
+#menu-btn::before,
+#menu-btn::after{
+  height: var(--btn-height);
+  width: var(--btn-width);
+  border-radius: var(--btn-radius);
+  background-color: var(--khaki);
+  position: absolute;
+  transition: all 400ms ease-in-out;
+}
+
+#menu-btn::before{
+  content: '';
+  top: var(--menu-bar-offsetUp);
+}
+
+#menu-btn::after{
+  content: '';
+  top: var(--menu-bar-offsetDown);
+}
+
+#menu-toggle:checked + #menu-btn-container #menu-btn{
+  transform: rotate(135deg);
+}
+
+#menu-toggle:checked + #menu-btn-container #menu-btn::before {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+#menu-toggle:checked + #menu-btn-container #menu-btn::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+  #navbar{
+    height: 15vh;
+  }
+
+  #navbar #menu li a::before{
+    all: unset;
+  }
+}
+
+@media (max-width: 500px){
+  /* hide the navbar and scroll-down-button */
+  #navbar{
+    display:none;
+  }
+
+  #down{
+    display: none;
+  }
+  
+  /* show the hamburger menu and its content */
+  #mobile-nav{
+    display:grid;
+  }
+
+  .menu-container{
+    display: grid;
+  }
+}

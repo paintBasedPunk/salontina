@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Salon Tina - Karlsruhe</title>
+  <link rel="stylesheet" href="./style/responsive-navbar.css">
+  <link rel="stylesheet" href="./style/style.css">
+  <link rel="stylesheet" href="./style/lightbox.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <!-- Home Section -->
+  <section id="home">
+
+    <!-- Landing Page Title -->
+    <h1>
+      <p>Willkommen bei</p>
+      <p>Salon Tina</p>
+    </h1>
+  
+    <div id="info">
+      <div>
+        <h3>Adresse</h3>
+        <p>Rüppurrer Str. 22</p>
+        <p>76137 Karlsruhe</p>
+      </div>
+      <div>
+        <h3>Telefon</h3>
+        <p>0721 379190</p>
+      </div>
+      <a href="https://www.facebook.com/Friseursalontina/" target="_blank"><i
+        class="fa-brands fa-facebook fa-solid"></i></a>
+    </div>
+
+    <!-- Scroll Down Button -->
+    <i id="down" class="fa-solid fa-circle-chevron-down"></i>
+
+    <!-- Navbar -->
+    <div class="menu-container">
+      <input id="menu-toggle" type="checkbox" />
+      <div id="menu-btn-container" for="menu-toggle">
+        <div id="menu-btn"></div>
+      </div>
+    </div>
+    <nav id="navbar">
+      <ul id="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#gallery">Galerie</a></li>
+        <li><a href="#price">Preise</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+        <li id="hours-link"><a href="#hours">Öffnungszeiten</a></li>
+      </ul>
+    </nav>
+
+    <nav id="mobile-nav">
+      <ul id="mobile-menu">
+        <li class="mobile-item"><a href="#home">Home</a></li>
+        <li class="mobile-item"><a href="#gallery">Galerie</a></li>
+        <li class="mobile-item"><a href="#price">Preise</a></li>
+        <li class="mobile-item"><a href="#contact">Kontakt</a></li>
+        <li class="mobile-item"><a href="#hours">Öffnungszeiten</a></li>
+      </ul>
+    </nav>
+  </section>
+
+  <section id="welcome">
+    <div id="intro">
+      <p>Unser Bestreben ist es, das Beste aus Ihrem Haar und Ihrem Typ zu machen. Ob das eine komplette Veränderung, oder eine Optimierung ihres Typs ist.</p>
+    <p>Farbe und Stil individuell auf den Menschen abgestimmt, stehen bei uns an erster Stelle.</p>
+    <p>Menschlichkeit und Authentizität, sowie eine kulturelle familiäre Atmosphäre, machen Ihren Friseurbesuch zu einem entspannten, angenehmen Erlebnis.</p>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery">
+    <h1 id="gallery-title" class="underline">Galerie</h1>
+    <div class="container">
+      <div class="card">
+        <img class="pic" src="./img/hair-01.jpg" alt="">
+      </div>
+      <div class="card">
+        <img class="pic" src="./img/hair-02.jpg" alt="">
+      </div>
+      <div class="card">
+        <img class="pic" src="./img/hair-03.jpg" alt="">
+      </div>
+      <div class="card">
+        <img class="pic" src="./img/hair-04.jpg" alt="">
+      </div>
+      <div class="card">
+        <img class="pic mobile-size" src="./img/hair-05.jpg" alt="">
+      </div>
+      <div class="card">
+        <img class="pic mobile-size" src="./img/hair-06.jpg" alt="">
+      </div>
+      <div class="card">
+        <img class="pic mobile-size" src="./img/hair-07.jpg" alt="">
+      </div>
+      <div class="card">
+        <img class="pic mobile-size" src="./img/hair-08.jpg" alt="">
+      </div>
+      <div class="card">
+        <img class="pic mobile-size" src="./img/hair-09.jpg" alt="">
+      </div>
+      <div class="card">
+        <img class="pic mobile-size" src="./img/hair-010.jpg" alt="">
+      </div>
+      <div class="card">
+        <img class="pic mobile-size" src="./img/hair-011.jpg" alt="">
+      </div>
+      <div class="card">
+        <img class="pic mobile-size" src="./img/hair-012.jpg" alt="">
+      </div>
+  </section>
+
+  <hr>
+
+  <!-- Price Section -->
+  <section id="price">
+    <div class="price-header price-title">
+      <h1 class="underline">Preisliste</h1>
+    </div>
+    <div id="women" class="center">
+      <div class="price-title">
+        <h1>Damen</h1>
+      </div>
+      <div class="price-list">
+        <div class="price-card">
+          <h3>Haarschnitt</h3>
+          <div class="price-tag">
+            <ul>
+              <li>Kurz</li>
+              <li>Mittel</li>
+              <li>Lang</li>
+            </ul>
+            <ul class="cost">
+              <li>20€</li>
+              <li>25€</li>
+              <li>30€</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="price-card">
+          <h3>Dauerwelle (sauer)</h3>
+          <div class="price-tag">
+            <ul>
+              <li>Kurz</li>
+              <li>Mittel</li>
+              <li>Lang</li>
+            </ul>
+            <ul class="cost">
+              <li>40€</li>
+              <li>50€</li>
+              <li>60€</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="price-card">
+          <h3>Waschen, Schneiden, Föhnen</h3>
+          <div class="price-tag">
+            <ul>
+              <li>Kurz</li>
+              <li>Mittel</li>
+              <li>Lang</li>
+            </ul>
+            <ul class="cost">
+              <li>35€</li>
+              <li>40€</li>
+              <li>48€</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="price-card">
+          <h3>Färben</h3>
+          <div class="price-tag">
+            <ul>
+              <li>Ansatzfärben</li>
+              <li>Kurz</li>
+              <li>Mittel</li>
+              <li>Lang</li>
+            </ul>
+            <ul class="cost">
+              <li>27€</li>
+              <li>35€</li>
+              <li>40€</li>
+              <li>48€</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="price-card">
+          <h3>Strähnen</h3>
+          <div class="price-tag">
+            <ul>
+              <li>Kurz</li>
+              <li>Mittel</li>
+              <li>Kammsträhnen</li>
+            </ul>
+            <ul class="cost">
+              <li>35€</li>
+              <li>45€</li>
+              <li>ab 10€</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="price-card ">
+          <h3>Sonstiges</h3>
+          <div class="price-tag">
+            <ul class="list-v2">
+              <li>
+              <li class="space-between">
+                <div>
+                  <p>Hochsteckfrisur</p>
+                  <p class="sub">(nach Absprache)</p>
+                </div>
+                <p>ab 40€</p>
+              </li>
+              </li>
+              <li class="space-between">
+                <p>Braut komplett</p>
+                <p>80€</p>
+              </li>
+              <li class="space-between">
+                <p>Wimpern Färben</p>
+                <p>12€</p>
+              </li>
+              <li class="space-between">
+                <p>Augenbrauen Färben</p>
+                <p>10€</p>
+              </li>
+              <li class="space-between">
+                <p>Augenbrauen Zupfen</p>
+                <p>10€</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="men" class="center">
+      <div class="price-title">
+        <h1>Herren</h1>
+      </div>
+      <div class="price-list">
+
+        <div class="price-card">
+          <h3>Haarschnitt</h3>
+          <div class="price-tag">
+            <ul class="haircut">
+              <li>Nass Haarschnitt</li>
+              <li>Waschen, Schneiden, Föhnen</li>
+              <li>Kinder bis 12 Jahren</li>
+            </ul>
+            <ul class="cost">
+              <li>20€</li>
+              <li>25€</li>
+              <li>16€</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="price-card">
+          <h3>Maschinenschnitt</h3>
+          <div class="price-tag">
+            <ul class="haircut">
+              <li>Komplett</li>
+            </ul>
+            <ul class="cost">
+              <li>15€</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="price-card">
+          <h3>Bart</h3>
+          <div class="price-tag">
+            <ul class="haircut">
+              <li>Bart schneiden</li>
+              <li>Rasieren</li>
+            </ul>
+            <ul class="cost">
+              <li>12€</li>
+              <li>12€</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr>
+  <!-- Contact Section -->
+  <section id="contact">
+    <h1 id="contact-title" class="underline">Kontakt</h1>
+    <div class="container">
+      <div id="adress">
+        <div>
+          <h3>Adresse</h3>
+          <p>Rüppurrer Str. 22</p>
+          <p>76137 Karlsruhe</p>
+        </div>
+        <div>
+          <h3 id="phone">Telefon</h3>
+          <p>0721 379190</p>
+        </div>
+      </div>
+
+      <div id="map">
+        <iframe id="google"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2617.409551458485!2d8.40798421597091!3d49.00279287930189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4797063f4a7437a5%3A0x6f67ebd0d56a1017!2sFriseursalon%20Tina!5e0!3m2!1sde!2sde!4v1673805658089!5m2!1sde!2sde"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" min-width="500px"></iframe>
+      </div>
+
+      <div id="hours">
+        <h3>Öffnungszeiten</h3>
+        <div class="hours-list">
+          <ul>
+            <li>Sonntag</li>
+            <li>Montag</li>
+            <li>Dienstag</li>
+            <li>Mittwoch</li>
+            <li>Donnerstag</li>
+            <li>Freitag</li>
+            <li>Samstag</li>
+          </ul>
+          <ul id="time">
+            <li>Geschlossen</li>
+            <li>Geschlossen</li>
+            <li>09:00 Uhr bis 18:30 Uhr</li>
+            <li>09:00 Uhr bis 18:30 Uhr</li>
+            <li>09:00 Uhr bis 18:30 Uhr</li>
+            <li>09:00 Uhr bis 18:30 Uhr</li>
+            <li>09:00 Uhr bis 16:00 Uhr</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+    <div id="impressum">
+      <a href="#">Impressum & Datenschutz</a>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="modal">
+    <div id="icons">
+        <div id="fullScreen-btn">
+         <img id="fullScreen-icon" src="https://i.postimg.cc/52QKL1f7/enter.png">
+        </div>
+        <div id="close-btn">&times</div>
+      </div>  
+
+      <div id="modal-container">
+        <img id="modal-img" class='fade-in' src="" alt="">
+      </div>
+      
+      <div id="prev">&#10094;</div>
+      <div id="next">&#10095;</div>
+      <div id="caption" class='fade-in'>picture text</div>
+      <div id="index"></div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://kit.fontawesome.com/7c267f13dc.js" crossorigin="anonymous"></script>
+  <script src="./script/responsive-navbar.js"></script>
+  <script src="./script/lightbox.js"></script>
+</body>
+
+</html>

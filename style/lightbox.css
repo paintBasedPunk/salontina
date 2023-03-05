@@ -1,0 +1,240 @@
+/* outer modal */
+#modal {
+  display: none;
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  user-select: none;
+
+  height: 100vh;
+  width: 100%;
+
+  grid-template-columns: 10vw 80vw 10vw;
+  grid-template-rows: 10vh 80vh 10vh;
+
+  /* place-content: center; */
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(0.5rem);
+  -webkit-backdrop-filter: blur(0.5rem);
+
+  overflow: hidden;
+}
+
+/* inner modal */
+#modal-container {
+  max-height: 100%;
+  max-width: 100%;
+
+  display: grid;
+  place-content: center;
+
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+}
+
+/* responsive image size by setting only a maximum height */
+#modal-img {
+  /* set a max-height that the image can't grow bigger than the screen */
+  margin: auto;
+  object-fit: cover;
+
+  /* aspect-ratio: 1 / 1; */
+
+  max-width: 100%;
+  max-height: 100%;
+
+  grid-row: 2/ 3;
+  grid-column: 2 / 3;
+}
+
+/* setting the fullscreen-size of modal-img */
+/* #modal:fullscreen #modal-img {
+  max-height: 85vh;
+} */
+
+/* icon section */
+#icons{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ position: absolute;
+ top: 0;
+ right: 0;
+ margin-right: 1rem;
+}
+
+#close-btn {
+  color: #fff;
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.5s;
+  margin-left: 1rem;
+  z-index: 2;
+}
+
+#fullScreen-btn {
+  cursor: pointer;
+  z-index: 2;
+}
+
+#fullScreen-btn img{
+ transition: 0.3s;
+ width: 1.6rem;
+}
+
+#fullScreen-btn img:hover {
+  transform: scale(1.2);
+}
+
+/* slide buttons */
+#prev {
+  grid-area: p;
+  border-radius: 0.75rem 0 0 0.75rem;
+}
+
+#next {
+  grid-area: n;
+  border-radius: 0 0.75rem 0.75rem 0;
+  right: 0;
+}
+
+#prev,
+#next {
+  font-size: 2rem;
+  cursor: pointer;
+  transition: 0.5s;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-inline: 4vw;
+}
+
+#prev:hover,
+#next:hover,
+#close-btn:hover {
+  color: rgba(80, 80, 80, 0.8);
+  backdrop-filter: blur(0.5rem);
+ -webkit-backdrop-filter: blur(0.5rem);
+}
+
+
+
+#caption {
+  font-size: 1.5rem;
+  display: grid;
+  place-content: center;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+#index {
+  display: grid;
+  place-content: center;
+  position: absolute;
+  top: 0;
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+/* Portrait View */
+@media(max-width: 480px){
+  #modal-container{
+    grid-column: 1 / -1;
+  }
+
+  #modal-img{
+    width: 100%;
+  }
+
+ .card-content{
+  display:none
+}
+ #fullScreen-btn{
+  display:none
+}
+
+#prev,
+#next {
+  top: 5vh;
+  /* margin-top: 5vh; */
+  z-index: 5;
+}
+
+#prev{
+  left: 20vw;
+}
+
+#next{
+  right: 20vw;
+}
+
+#index{
+  font-size: 1.5rem;
+  top: 2.5vh;
+  margin-top: 0rem;
+ }
+
+
+}
+
+/* Landscape View */
+@media(max-height: 480px){
+.card-content{
+  display:none
+}
+#fullScreen-btn{
+  display:none
+}
+
+#modal{
+  grid-template-columns: 20vw 60vw 20vw;
+  grid-template-rows: 20vh 60vh 20vh;
+}
+
+#modal-container {
+ grid-row: 1 / -1;
+ /* grid-column: 1 / -1; */
+}
+
+#modal-img{
+  height: 100%;
+}
+
+#caption,
+#index {
+left: 0;
+margin-inline: 2vw;
+width: unset;
+}
+
+#index{
+font-size: 1.5rem;
+}
+}
+
+/* Animation */
+@keyframes zoom-in {
+  from {transform: scale(0);}
+  to {transform: scale(1);}
+}
+
+@keyframes zoom-out {
+  from {transform: scale(1);}
+  to {transform: scale(0);}
+}
+
+@keyframes fade-in{
+ from{opacity:0}
+ to{opacity:1}
+}
+
+.fade-in{
+ animation: fade-in 800ms ease-in;
+}
