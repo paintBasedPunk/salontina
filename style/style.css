@@ -78,7 +78,8 @@ html {
 
 /* Main-Styling */
 body {
-  background-color: var(--black);
+  /* background-color: var(--black); */
+  background-color: green;
   color: var(--khaki);
   font-family: helvetica; 
   user-select: none;
