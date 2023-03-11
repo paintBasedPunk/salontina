@@ -147,7 +147,7 @@
 
   #modal-container {
     grid-column: 1 / -1;
-    border: red 2px solid;
+    border: blue 2px solid;
   }
 
   #modal-img {
