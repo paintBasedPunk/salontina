@@ -114,7 +114,7 @@
 #prev:hover,
 #next:hover,
 #close-btn:hover {
-  color: rgba(80, 80, 80, 0.8);
+  /* color: rgba(80, 80, 80, 0.8); */
   backdrop-filter: blur(0.5rem);
   -webkit-backdrop-filter: blur(0.5rem);
 }
@@ -147,7 +147,6 @@
 
   #modal-container {
     grid-column: 1 / -1;
-    border: blue 2px solid;
   }
 
   #modal-img {
@@ -202,7 +201,6 @@
 
   #modal-container {
     grid-row: 1 / -1;
-    border: teal 2px solid;
   }
 
   #modal-img {
