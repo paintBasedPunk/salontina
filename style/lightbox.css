@@ -184,7 +184,7 @@
 }
 
 /* Landscape View */
-@media (max-height: 480px) {
+@media (max-height: 400px) {
   .card-content {
     display: none;
   }
