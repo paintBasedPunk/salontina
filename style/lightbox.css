@@ -179,12 +179,6 @@
     right: 20vw;
   }
 
-  #prev:hover,
-  #next:hover,
-  #close-btn:hover {
-    all: unset;
-  }
-
   #index {
     font-size: 1.5rem;
     top: 2.5vh;
@@ -241,12 +235,6 @@
 
   #next {
     right: 0;
-  }
-
-  #prev:hover,
-  #next:hover,
-  #close-btn:hover {
-    all: unset
   }
 }
 
