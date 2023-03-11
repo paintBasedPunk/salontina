@@ -146,7 +146,8 @@
 /* Portrait View */
 @media(max-width: 480px){
   #modal-container{
-    grid-column: 1 / -1;
+    /* grid-column: 1 / -1; */
+    border: #fff 2px solid;
   }
 
   #modal-img{
@@ -201,6 +202,7 @@
 #modal-container {
  grid-row: 1 / -1;
  /* grid-column: 1 / -1; */
+ border: #fff 2px solid;
 }
 
 #modal-img{
