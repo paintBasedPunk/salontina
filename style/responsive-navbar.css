@@ -85,6 +85,7 @@
     top: 0;
   
     display: none;
+    place-content: center;
   
     background-color: var(--bg-secondary);
     backdrop-filter: blur(0.5rem);
@@ -190,7 +191,7 @@
   }
 }
 
-@media (max-width: 500px){
+@media (max-width: 580px){
   /* hide the navbar and scroll-down-button */
   #navbar{
     display:none;
@@ -207,5 +208,15 @@
 
   .menu-container{
     display: grid;
+  }
+}
+
+@media (max-height: 400px){
+  .menu-container{
+    right: 0;
+  }
+
+  #mobile-nav #mobile-menu li{
+    margin: 1rem 0;
   }
 }
