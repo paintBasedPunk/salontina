@@ -145,7 +145,7 @@
 @media (max-width: 580px) {
   #modal-container {
     grid-column: 1 / -1;
-    border: #fff 2px solid;
+    border: red 2px solid;
   }
 
   #modal-img {
