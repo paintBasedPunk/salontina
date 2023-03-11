@@ -202,12 +202,12 @@
 
   #modal-container {
     grid-row: 1 / -1;
-    border: #fff 2px solid;
+    border: teal 2px solid;
   }
 
   #modal-img {
     height: 100%;
-    width: 100%;
+    /* width: 100%; */
     aspect-ratio: 1 / 1;
     object-fit: cover;
   }
