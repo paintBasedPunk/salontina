@@ -45,9 +45,6 @@
 
   max-width: 100%;
   max-height: 100%;
-
-  grid-row: 2/ 3;
-  grid-column: 2 / 3;
 }
 
 /* setting the fullscreen-size of modal-img */
@@ -143,6 +140,11 @@
 
 /* Portrait View */
 @media (max-width: 580px) {
+#modal{
+  grid-template-columns: 15vw 70vw 15vw;
+  grid-template-rows: 15vh 70vh 15vh;
+}
+
   #modal-container {
     grid-column: 1 / -1;
     border: red 2px solid;
