@@ -140,10 +140,10 @@
 
 /* Portrait View */
 @media (max-width: 580px) {
-#modal{
-  grid-template-columns: 15vw 70vw 15vw;
-  grid-template-rows: 15vh 70vh 15vh;
-}
+  #modal {
+    grid-template-columns: 15vw 70vw 15vw;
+    grid-template-rows: 15vh 70vh 15vh;
+  }
 
   #modal-container {
     grid-column: 1 / -1;
@@ -177,6 +177,12 @@
 
   #next {
     right: 20vw;
+  }
+
+  #prev:hover,
+  #next:hover,
+  #close-btn:hover {
+    all: unset;
   }
 
   #index {
@@ -221,6 +227,26 @@
 
   #index {
     font-size: 1.5rem;
+  }
+
+  #prev,
+  #next {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  #prev {
+    left: 0;
+  }
+
+  #next {
+    right: 0;
+  }
+
+  #prev:hover,
+  #next:hover,
+  #close-btn:hover {
+    all: unset
   }
 }
 
