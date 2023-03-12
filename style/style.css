@@ -301,6 +301,8 @@ h1{
 #map{
   display: grid;
   place-content: center;
+  
+  display: none;
 }
 
 #map iframe {
@@ -320,6 +322,8 @@ h1{
   align-items: center;
   margin: auto;
   min-height: 50vh;
+
+  display: none;
 }
 
 #hours-link{
