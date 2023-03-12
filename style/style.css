@@ -458,12 +458,17 @@ h1{
   }
 
   #adress{
-    justify-content: space-between;
-    width: 80vw;
+    /* justify-content: space-between; */
+    /* width: 80vw; */
+    border: #fff 2px solid;
   }
 
   #adress div{
-    margin: 2rem 0;
+    /* margin: 2rem 0; */
+    /* width: 50vw; */
+    border: #fff 2px solid;
+    background-color: green;
+    margin: 1rem;
   }
 
   #map iframe {
