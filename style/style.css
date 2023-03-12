@@ -273,7 +273,7 @@ h1{
   display: grid;
   grid-template-rows: 5vh 10vh auto 5vh;
 
-  display: none;
+  /* display: none; */
 }
 
 #contact-title {
@@ -289,6 +289,8 @@ h1{
 #adress{
   display: flex;
   margin: auto;
+
+  display: none;
 }
 
 #adress div{
@@ -303,8 +305,6 @@ h1{
 #map{
   display: grid;
   place-content: center;
-  
-  display: none;
 }
 
 #map iframe {
@@ -312,8 +312,6 @@ h1{
   width: 40vw;
   margin: 2rem 0;
   border-radius: 5px;
-
-  display: none;
 }
 
 /* hours */
