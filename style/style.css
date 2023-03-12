@@ -323,7 +323,7 @@ h1{
   margin: auto;
   min-height: 50vh;
 
-  display: none;
+  /* display: none; */
 }
 
 #hours-link{
