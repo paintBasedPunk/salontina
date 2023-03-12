@@ -378,9 +378,9 @@ h1{
     font-size: 0.8rem;
   }
 
-  #info a{
+  /* #info a{
     font-size: 1.8rem;
-  }
+  } */
 
   /* Price Section */
   #price{
@@ -400,12 +400,13 @@ h1{
   /* Contact Section */
   #contact {
     grid-template-rows: 15vh 10vh auto 8vh;
+    background-color: teal;
   }
 
-  #map iframe {
+  /* #map iframe {
     height: 80vh;
     width: 60vw;
-  }
+  } */
 
   #hours-link{
     display: block;
