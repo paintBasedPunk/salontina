@@ -369,7 +369,7 @@ h1{
 /* Portrait View */
 @media(max-width:550px){
   body{
-    -webkit-text-size-adjust: none;
+    -webkit-text-size-adjust: 100%;
   }
 
   #home h1{
@@ -423,7 +423,7 @@ h1{
 /* Landscape View */
 @media(max-height: 440px){
   body{
-    -webkit-text-size-adjust: none;
+    -webkit-text-size-adjust: 100%;
   }
 
   /* Utilities */
