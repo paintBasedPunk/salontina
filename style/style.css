@@ -289,8 +289,7 @@ h1{
 #adress{
   display: flex;
   margin: auto;
-
-  display: none;
+  background-color: #888;
 }
 
 #adress div{
