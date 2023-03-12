@@ -368,6 +368,10 @@ h1{
 
 /* Portrait View */
 @media(max-width:550px){
+  #home h1{
+    font-size: 2rem;
+  }
+
   /* Home Section */
   #info{
     left: unset;
@@ -421,7 +425,7 @@ h1{
 
   /* Home Section */
   #home h1{
-    font-size: 2.2rem;
+    font-size: 1.8rem;
   }
 
   #info{
