@@ -272,6 +272,8 @@ h1{
 #contact {
   display: grid;
   grid-template-rows: 5vh 10vh auto 5vh;
+
+  display: none;
 }
 
 #contact-title {
