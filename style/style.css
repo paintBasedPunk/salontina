@@ -289,7 +289,6 @@ h1{
 #adress{
   display: flex;
   margin: auto;
-  background-color: #888;
 }
 
 #adress div{
@@ -367,6 +366,52 @@ h1{
 
 /* Media Queries */
 
+/* Portrait View */
+@media(max-width:550px){
+  /* Home Section */
+  #info{
+    left: unset;
+    right: 0;
+    text-align: right;
+  }
+
+  #intro{
+    max-width: 90vw;
+  }
+
+  /* Gallery Section */
+  #gallery .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Price Section */
+  .price-list{
+    grid-template-columns: 1fr;
+  }
+
+  /* Contact Section */
+  #contact {
+    grid-template-rows: 5vh 10vh auto 5vh;
+  }
+
+  #adress div{
+    margin: 1rem;
+  }
+
+  #map iframe {
+    height: 60vh;
+    width: 90vw;
+  }
+
+  .hours-list ul{
+    margin: 0 0.75rem;
+  }
+
+  #time{
+    margin-left: 0.8rem;
+  }
+}
+
 /* Landscape View */
 @media(max-height: 440px){
   /* Utilities */
@@ -404,83 +449,11 @@ h1{
 
   /* Contact Section */
   #contact {
-    grid-template-rows: 15vh 10vh auto 8vh;
-    background-color: teal;
+    grid-template-rows: 15vh 20vh auto 8vh;
   }
 
   #map iframe {
     height: 80vh;
     width: 60vw;
-  }
-
-  /* #hours-link{
-    display: block;
-  } */
-
-  /* #hours h3{
-    margin-top: 18vh;
-  } */
-
-  /* Title Size */
-  /* #gallery-title,
-  .price-title h1,
-  #contact-title{
-    font-size: 2rem;
-  } */
-}
-
-/* Portrait View */
-@media(max-width:550px){
-  /* Home Section */
-  #info{
-    left: unset;
-    right: 0;
-    text-align: right;
-  }
-
-  #intro{
-    max-width: 90vw;
-  }
-
-  /* Gallery Section */
-  #gallery .container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  /* Price Section */
-  .price-list{
-    grid-template-columns: 1fr;
-  }
-
-  /* Contact Section */
-  #contact {
-    grid-template-rows: 5vh 10vh auto 5vh;
-  }
-
-  #adress{
-    /* justify-content: space-between; */
-    /* width: 80vw; */
-    border: #fff 2px solid;
-  }
-
-  #adress div{
-    /* margin: 2rem 0; */
-    /* width: 50vw; */
-    border: #fff 2px solid;
-    background-color: green;
-    margin: 1rem;
-  }
-
-  #map iframe {
-    height: 60vh;
-    width: 90vw;
-  }
-
-  .hours-list ul{
-    margin: 0 0.75rem;
-  }
-
-  #time{
-    margin-left: 0.8rem;
   }
 }
