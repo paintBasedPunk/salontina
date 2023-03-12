@@ -363,7 +363,7 @@ h1{
 /* Media Queries */
 
 /* Landscape View */
-@media(max-width: 768px){
+@media(max-height: 440px){
   /* Utilities */
   #down{
     display: none;
