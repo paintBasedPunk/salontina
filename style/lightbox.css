@@ -89,20 +89,14 @@
 }
 
 /* slide buttons */
-#prev {
-  grid-area: p;
-  border-radius: 0.75rem 0 0 0.75rem;
-}
-
 #next {
-  grid-area: n;
-  border-radius: 0 0.75rem 0.75rem 0;
   right: 0;
 }
 
 #prev,
 #next {
   font-size: 2rem;
+  padding-inline: 1rem;
   cursor: pointer;
   transition: 0.5s;
   position: absolute;
@@ -171,11 +165,11 @@
   }
 
   #prev {
-    left: 20vw;
+    left: 16vw;
   }
 
   #next {
-    right: 20vw;
+    right: 16vw;
   }
 
   #index {
