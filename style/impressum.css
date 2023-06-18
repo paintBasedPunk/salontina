@@ -1,0 +1,30 @@
+
+
+/* CSS Variables */
+:root {
+    --white: #fff;
+    --khaki: #F0E68C;
+    --dark-color: #383740;
+    --black: #111;
+  }
+
+/* Main-Styling */
+body {
+    background-color: var(--black);
+    color: var(--khaki);
+    font-family: helvetica; 
+    user-select: none;
+  }
+
+  div, p, h4{
+    margin: 2rem;
+}
+
+a{
+    color: var(--white);
+}
+
+.underline{
+    border-bottom: var(--khaki) 2px solid;
+    display: inline;
+  }
