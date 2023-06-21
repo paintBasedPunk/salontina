@@ -93,7 +93,8 @@ h1{
 #home {
   display: grid;
   /* background-image: url("https://source.unsplash.com/1600x1600?barber"); */
-  background-image: url('../img/medih3.png');
+  /* background-image: url('../img/medih3.png'); */
+  background-image: url('../img/medih-black-white.png');
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -109,7 +110,7 @@ h1{
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(17,17, 17, 0.4);
+  background: rgba(10, 10, 10, 0.4);
 }
 
 #home h1 {
