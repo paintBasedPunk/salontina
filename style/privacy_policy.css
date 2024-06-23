@@ -1,0 +1,32 @@
+/* --- Custom Properties --- */
+:root {
+  --dark: #050505;
+  --prime: #e7e3e3;
+}
+
+
+/* Main-Styling */
+body {
+    background-color: var(--prime);
+    color: var(--dark);
+    font-family: helvetica; 
+    user-select: none;
+  }
+
+  div, p, h4{
+    margin-inline: 0.5rem;
+    
+}
+
+p{
+  margin: 0.5rem;
+}
+
+a{
+    color: var(--white);
+}
+
+.underline{
+    border-bottom: var(--dark) 2px solid;
+    display: inline;
+  }

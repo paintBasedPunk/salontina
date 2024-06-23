@@ -1,4 +1,19 @@
-/* outer modal */
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  /* elements does not get selected */
+  /* user-select: none; */
+}
+
+/* --- Variables --- */
+:root {
+  --modal-height: 80vh;
+}
+
+/* --- Outer Modal --- */
 #modal {
   display: none;
   position: fixed;
@@ -12,47 +27,31 @@
   height: 100vh;
   width: 100%;
 
-  grid-template-columns: 10vw 80vw 10vw;
-  grid-template-rows: 10vh 80vh 10vh;
+  grid-template-columns: 7.5vw 85vw 7.5vw;
 
-  /* place-content: center; */
   background-color: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(0.5rem);
   -webkit-backdrop-filter: blur(0.5rem);
 
-  overflow: hidden;
+  /* overflow: hidden; */
+  /* display: grid; */
+
+  place-content: center;
 }
 
-/* inner modal */
+/* --- Inner Modal --- */
 #modal-container {
   max-height: 100%;
   max-width: 100%;
+  margin: auto;
 
   display: grid;
   place-content: center;
 
-  grid-row: 2 / 3;
   grid-column: 2 / 3;
 }
 
-/* responsive image size by setting only a maximum height */
-#modal-img {
-  /* set a max-height that the image can't grow bigger than the screen */
-  margin: auto;
-  object-fit: cover;
-
-  /* aspect-ratio: 1 / 1; */
-
-  max-width: 100%;
-  max-height: 100%;
-}
-
-/* setting the fullscreen-size of modal-img */
-/* #modal:fullscreen #modal-img {
-  max-height: 85vh;
-} */
-
-/* icon section */
+/* --- Icon Section --- */
 #icons {
   display: flex;
   justify-content: center;
@@ -60,12 +59,12 @@
   position: absolute;
   top: 0;
   right: 0;
-  margin-right: 1rem;
+  margin: 1rem;
 }
 
-#close-btn {
+.close-btn {
   color: #fff;
-  font-size: 3rem;
+  font-size: 1.8rem;
   font-weight: bold;
   cursor: pointer;
   text-align: center;
@@ -74,151 +73,114 @@
   z-index: 2;
 }
 
-#fullScreen-btn {
+#full {
   cursor: pointer;
-  z-index: 2;
+  z-index: 4;
 }
 
-#fullScreen-btn img {
+#full {
   transition: 0.3s;
-  width: 1.6rem;
+  font-size: 1.6rem;
 }
 
-#fullScreen-btn img:hover {
+#full:hover {
   transform: scale(1.2);
 }
 
-/* slide buttons */
-#next {
-  right: 0;
-}
-
+/* --- Slide Buttons --- */
 #prev,
 #next {
   font-size: 2rem;
-  padding-inline: 1rem;
   cursor: pointer;
+
+  margin: auto;
+  grid-row: 1 / -1;
   transition: 0.5s;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  margin-inline: 4vw;
+}
+
+#prev {
+  left: 0;
+  grid-column: 1 / 2;
+
+  left: 50%;
+}
+
+#next {
+  right: 0;
+  grid-column: 3 / 4;
 }
 
 #prev:hover,
 #next:hover,
 #close-btn:hover {
-  /* color: rgba(80, 80, 80, 0.8); */
-  backdrop-filter: blur(0.5rem);
-  -webkit-backdrop-filter: blur(0.5rem);
+  color: rgba(80, 80, 80, 0.8);
+}
+
+/* responsive image size by setting only a maximum height */
+#modal-img {
+  /* set a max-height so that the image can't grow bigger than the screen */
+  max-height: var(--modal-height);
+  max-width: 100%;
+  margin: auto;
+  object-fit: cover;
+}
+
+/* setting the fullscreen-size of modal-img */
+#modal:fullscreen #modal-img {
+  max-height: var(--modal-height);
 }
 
 #caption {
   font-size: 1.5rem;
-  display: grid;
-  place-content: center;
+  font-weight: bold;
   position: absolute;
   bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   margin-bottom: 1rem;
-  width: 100%;
+
+  /* display: none; */
 }
 
 #index {
-  display: grid;
-  place-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
   position: absolute;
   top: 0;
+  left: 50%;
   margin-top: 1.5rem;
-  width: 100%;
+  transform: translateX(-50%);
+
+  /* display: none; */
 }
 
-/* Portrait View */
-@media (max-width: 580px) {
+/* --- Media Queries --- */
+@media (max-height: 600px) {
   #modal {
-    grid-template-columns: 15vw 70vw 15vw;
-    grid-template-rows: 15vh 70vh 15vh;
+    place-content: normal;
+    grid-template-columns: 10vw auto 10vw;
   }
 
-  #modal-container {
-    grid-column: 1 / -1;
-  }
-
-  #modal-img {
-    height: 100%;
-    /* width: 100%; */
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-  }
-
-  .card-content {
+  #full {
     display: none;
-  }
-  #fullScreen-btn {
-    display: none;
-  }
-
-  #prev,
-  #next {
-    top: 5vh;
-    /* margin-top: 5vh; */
-    z-index: 5;
-  }
-
-  #prev {
-    left: 16vw;
-  }
-
-  #next {
-    right: 16vw;
   }
 
   #index {
-    font-size: 1.5rem;
-    top: 2.5vh;
-    margin-top: 0rem;
-  }
-}
-
-/* Landscape View */
-@media (max-height: 400px) {
-  .card-content {
     display: none;
-  }
-  #fullScreen-btn {
-    display: none;
-  }
-
-  #modal {
-    grid-template-columns: 20vw 60vw 20vw;
-    grid-template-rows: 20vh 60vh 20vh;
   }
 
   #modal-container {
+    grid-column: 2 / 3;
     grid-row: 1 / -1;
-  }
-
-  #modal-img {
     height: 100%;
-    /* width: 100%; */
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
+    margin: 0.5rem 0;
   }
 
-  #caption,
-  #index {
-    left: 0;
-    margin-inline: 2vw;
-    width: unset;
-  }
-
-  #index {
-    font-size: 1.5rem;
-  }
 
   #prev,
   #next {
+    margin-inline: 0.7rem;
     top: 50%;
-    transform: translateY(-50%);
   }
 
   #prev {
@@ -230,11 +192,53 @@
   }
 }
 
+@media (max-width: 550px) {
+  .card-content {
+    display: none;
+  }
+
+  #full {
+    display: none;
+  }
+
+  #modal {
+    place-content: normal;
+  }
+
+  #modal-container {
+    grid-column: 1 / -1;
+    margin: 0.5rem 0;
+  }
+
+  #index {
+    display: none;
+  }
+
+  #prev,
+  #next {
+    margin: 1rem auto;
+    grid-column: 1 / -1;
+    position: absolute;
+    top: 0;
+  }
+
+  #prev {
+    left: 50%;
+    transform: translateX(-200%);
+  }
+
+  #next {
+    right: 50%;
+    transform: translateX(200%);
+  }
+}
+
 /* Animation */
 @keyframes zoom-in {
   from {
     transform: scale(0);
   }
+
   to {
     transform: scale(1);
   }
@@ -244,6 +248,7 @@
   from {
     transform: scale(1);
   }
+
   to {
     transform: scale(0);
   }
@@ -253,8 +258,19 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
   }
 }
 

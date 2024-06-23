@@ -14,8 +14,7 @@ let modal_img = document.getElementById("modal-img");
 let prev = document.getElementById("prev");
 let next = document.getElementById("next");
 
-let fullScreen_btn = document.getElementById("fullScreen-btn");
-let fullScreen_icon = document.getElementById("fullScreen-icon");
+let full = document.getElementById("full");
 
 //close button
 let close_btn = document.getElementById("close-btn");
@@ -25,98 +24,97 @@ var picArray = Array.from(pic);
 
 //click event for every picture
 for (n = 0; n < pic.length; n++) {
-  pic[n].addEventListener("click", function (e) {
-    modal.style.display = "grid";
-    modal_img.src = e.target.src;
-    caption.innerText = e.target.alt;
+  pic[n].addEventListener("click", showModal);
+}
 
-    //adding "active class" as event condition
-    modal.classList.add("active");
+function showModal(e) {
+  modal.style.display = "grid";
+  modal_img.src = e.target.src;
+  caption.innerText = e.target.alt;
 
-    //zoom-in animation
-    modal_container.style.animation = "zoom-in 800ms";
-    
-    //reset fade-in animation
-    restartAnimation()
+  //adding "active class" as event condition
+  modal.classList.add("active");
 
-    //hiding the scroll bar
-    body.style.overflow = "hidden";
+  //zoom-in animation
+  modal.style.animation = "fade-in 800ms";
 
-    //get the index of the array by clicking on it
-    var indexCounter = picArray.indexOf(e.target);
+  //reset fade-in animation
+  restartAnimation();
+
+  //hiding the scroll bar
+  body.style.overflow = "hidden";
+
+  //get the index of the array by clicking on it
+  var indexCounter = picArray.indexOf(e.target);
+
+  //shows index of image
+  // let imgIndex = indexCounter + 1;
+  index.innerHTML = indexCounter + 1 + " / " + pic.length;
+
+  //setting modal img & text by its index of the gallery
+  function refresh() {
+    //modal picture = clicked picture of gallery
+    modal_img.src = pic[indexCounter].src;
+
+    //shows caption text when slide
+    caption.innerText = pic[indexCounter].alt;
 
     //shows index of image
-    let imgIndex = indexCounter + 1;
-    index.innerHTML = imgIndex + " / " + pic.length;
+    let slideIndex = indexCounter + 1;
+    index.innerHTML = slideIndex + " / " + pic.length;
+  }
 
-    //starting index = index of the clicked image
-    var k = indexCounter;
-
-    //setting modal img & text by its index of the gallery
-    function modalImage() {
-      //modal picture = clicked picture of gallery
-      modal_img.src = pic[k].src;
-
-      //shows caption text when slide
-      caption.innerText = pic[k].alt;
-
-      //shows index of image
-      let slideIndex = k + 1;
-      index.innerHTML = slideIndex + " / " + pic.length;
+  //slide left
+  function slideLeft() {
+    //decrase index by 1
+    indexCounter--;
+    //set index to 0 if k < 0
+    if (indexCounter < 0) {
+      indexCounter = pic.length - 1;
     }
+    refresh();
+    restartAnimation();
+  }
 
-    //slide left
-    function slideLeft(e) {
-      //decrase index by 1
-      k--;
-      //set index to 0 if k < 0
-      if (k < 0) {
-        k = pic.length - 1;
-      }
-      modalImage();
-      restartAnimation()
+  //slide right
+  function slideRight() {
+    //increase index by 1
+    indexCounter++;
+    //set index to 0 if k > number of pictures
+    if (indexCounter >= pic.length) {
+      indexCounter = 0;
     }
+    refresh();
+    restartAnimation();
+  }
 
-    //slide right
-    function slideRight(e) {
-      //increase index by 1
-      k++;
-      //set index to 0 if k > number of pictures
-      if (k >= pic.length) {
-        k = 0;
-      }
-      modalImage();
-      restartAnimation()
+  //previous & next button click event
+  prev.addEventListener("click", slideLeft);
+  next.addEventListener("click", slideRight);
+
+  //arrow key navigation
+  body.addEventListener("keydown", function (e) {
+    if (e.key == "ArrowLeft") {
+      slideLeft();
+      restartAnimation();
     }
-
-    //previous & next button click event
-    prev.addEventListener("click", slideLeft);
-    next.addEventListener("click", slideRight);
-
-    //arrow key navigation
-    body.addEventListener("keydown", function (e) {
-      if (e.key == "ArrowLeft") {
-        slideLeft();
-        restartAnimation()
-      }
-      if (e.key == "ArrowRight" || e.key == " ") {
-        slideRight();
-        restartAnimation()
-      }
-    });
+    if (e.key == "ArrowRight" || e.key == " ") {
+      slideRight();
+      restartAnimation();
+    }
   });
 }
 
 //resetting the fade-in animation by removing & adding the class name
-function restartAnimation(){
-  modal_img.classList.remove('fade-in')
-  caption.classList.remove('fade-in')
+function restartAnimation() {
+  modal_img.classList.remove("fade-in");
+  caption.classList.remove("fade-in");
   //index.classList.remove('fade-in')
-  
+
   void modal_img.offsetWidth;
-  
-  modal_img.classList.add('fade-in')
-  caption.classList.add('fade-in')
+
+  modal_img.classList.add("fade-in");
+  caption.classList.add("fade-in");
   //index.classList.add('fade-in')
 }
 
@@ -125,17 +123,22 @@ function fullScreenMode() {
   modal.requestFullscreen();
 }
 
-//full screen on click event
-fullScreen_btn.addEventListener("click", fullScreenClick);
+// Full Screen Toggle on Click
+full.addEventListener("click", fullScreen);
 
-function fullScreenClick() {
-  //adds / removes class name of 'enter'
-  fullScreen_btn.classList.toggle("fullScreen-active");
-  //enter/exit full screen mode depending on the class name 'enter'
-  if (fullScreen_btn.className == "fullScreen-active") {
-    fullScreenMode();
-  }
-  if (fullScreen_btn.className == "") {
+function fullScreen() {
+  full.classList.toggle("full-active");
+  let isActive = full.classList.contains("full-active");
+
+  if (isActive) {
+    full.classList.remove("fa-expand");
+    full.classList.add("fa-compress");
+
+    modal.requestFullscreen();
+  } else {
+    full.classList.remove("fa-compress");
+    full.classList.add("fa-expand");
+
     document.exitFullscreen();
   }
 }
@@ -143,13 +146,20 @@ function fullScreenClick() {
 //change fullScreen-icon by "fullscreenchange" event
 body.addEventListener("fullscreenchange", function () {
   if (document.fullscreen == true) {
-    fullScreen_icon.src = "https://i.postimg.cc/cJq9cjHs/exit.png";
-    restartAnimation()
+    // Fullscreen Compress;
+    full.classList.add("full-active");
+    full.classList.remove("fa-expand");
+    full.classList.add("fa-compress");
+
+    restartAnimation();
   }
   if (document.fullscreen == false) {
-    fullScreen_btn.classList.remove("fullScreen-active");
-    fullScreen_icon.src = "https://i.postimg.cc/52QKL1f7/enter.png";
-    restartAnimation()
+    // Fullscreen Expand;
+    full.classList.remove("full-active");
+    full.classList.remove("fa-compress");
+    full.classList.add("fa-expand");
+
+    restartAnimation();
   }
 });
 
@@ -166,13 +176,8 @@ function closeWindow() {
     document.exitFullscreen();
   }
 
-  //reset the fullScreen_btn
-  if (fullScreen_btn.className == "fullScreen-active") {
-    fullScreen_btn.classList.remove("fullScreen-active");
-  }
-
   //zoom-out animation
-  modal_container.style.animation = "zoom-out 800ms forwards";
+  modal.style.animation = "fade-out 800ms forwards";
   setTimeout(closeModal, 800);
 }
 
@@ -181,18 +186,23 @@ body.addEventListener("keydown", function (e) {
   //full screen by pressing "f"
   if (e.key === "f") {
     //pressing "f" is only possible when the modal is "active"
-    if(modal.className == 'active'){
-      //changes the fullscreen icon
-      fullScreen_btn.className = "fullScreen-active";
-      fullScreenMode();
+    if (modal.className == "active") {
+      // Fullscreen Compress;
+      full.classList.add("full-active");
+      full.classList.remove("fa-expand");
+      full.classList.add("fa-compress");
+
+      modal.requestFullscreen();
     }
   }
 
   //close modal by pressing "ESC"
   if (e.key === "Escape") {
-    closeWindow();
+    if (modal.className == "active") {
+      closeWindow();
+    }
   }
- });
+});
 
 //close button
 close_btn.addEventListener("click", closeWindow);
@@ -200,7 +210,7 @@ close_btn.addEventListener("click", closeWindow);
 //close modal when clicking outside of the image
 modal.addEventListener("click", function (e) {
   if (
-    e.target === modal_container
+    e.target === modal
     // e.target != modal_img &&
     // e.target != next &&
     // e.target != prev &&
@@ -213,11 +223,11 @@ modal.addEventListener("click", function (e) {
   }
 });
 
-//disable right click
-window.addEventListener(
-  "contextmenu",
-  function (e) {
-    e.preventDefault();
-  },
-  false
-);
+//--- Disable Right Click ---
+// window.addEventListener(
+//   "contextmenu",
+//   function (e) {
+//     e.preventDefault();
+//   },
+//   false
+// );

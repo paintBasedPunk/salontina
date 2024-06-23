@@ -28,9 +28,10 @@
 
   background-color: var(--bg-secondary);
   backdrop-filter: blur(0.5rem);
-  
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
   
   position: absolute;
   bottom: 0;
@@ -38,7 +39,6 @@
 }
 
 #navbar #menu{
-  grid-column: 2 / 3;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,6 +46,10 @@
 
 #navbar #menu li{
   margin: 0 1rem;
+}
+
+#navbar .fa-brands{
+  font-size: 1.6rem;
 }
 
 /* navbar hover effect */
