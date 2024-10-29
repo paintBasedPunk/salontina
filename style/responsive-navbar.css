@@ -1,7 +1,7 @@
 /* CSS Variables */
 :root{
   --bg-primary: hsla(0, 100%, 50%, 0.2);
-  --bg-secondary: hsla(0, 0%, 0%, 0.2);
+  --bg-secondary: hsla(0, 0%, 0%, 0.5);
   --bg-dark: #333;
   --bg-light: #fff;
   --khaki: #f0e68c;
