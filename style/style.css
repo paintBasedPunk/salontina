@@ -441,6 +441,10 @@ h1 {
   #time {
     margin-left: 0.8rem;
   }
+
+   .footer.privacy{
+    display: none;
+  }
 }
 
 @media(max-width: 480px) {
